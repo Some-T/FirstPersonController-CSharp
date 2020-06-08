@@ -6,7 +6,7 @@
 
 # To Do:
 
-- Lock cursor
+- Lock cursor = COMPLETE
 - Mouse Look
 - Rotate Player
 - Camera Pitch
