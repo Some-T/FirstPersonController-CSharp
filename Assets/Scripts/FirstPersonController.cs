@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using Cursor = UnityEngine.Cursor;
 
 public class FirstPersonController : MonoBehaviour
 {
@@ -21,6 +23,8 @@ public class FirstPersonController : MonoBehaviour
     public float lookSensitivity = 2;
     public float lookSmoothDamp = 0.1f;
     public Camera cam;
+    public GameObject crossHair;
+    bool isActive;
 
     // Start is called before the first frame update
     void Start()
@@ -31,18 +35,26 @@ public class FirstPersonController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
         player = transform.gameObject;
-        
+        crossHair = GameObject.FindWithTag("CrossHair");
 
-}
+
+    }
+
+
+
 
     // Update is called once per frame
-    void Update()
+        void Update()
     {
         float Horizontal = Input.GetAxis("Horizontal") * speed;
         float Vertical = Input.GetAxis("Vertical") * speed;
-        Horizontal *= Time.deltaTime;
-        Vertical *= Time.deltaTime;
+        Horizontal *= Time.fixedDeltaTime;
+        Vertical *= Time.fixedDeltaTime;
         transform.Translate(Horizontal, 0, Vertical);
+
+        
+        
+
         if (isGrounded() && Input.GetButtonDown("Jump"))
 
         {
@@ -50,7 +62,37 @@ public class FirstPersonController : MonoBehaviour
         }
 
         if (Input.GetKeyDown("escape"))
+        {
             Cursor.lockState = CursorLockMode.None;
+        }
+
+        if (Input.GetButtonDown("Sprint"))
+        {
+            speed = 15;
+            //Debug.Log("Sprint Button Held Down");
+        }
+
+        if (Input.GetButtonUp("Sprint"))
+        {
+            speed = 5;
+            //Debug.Log("Sprint Button Let Go");
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            isActive = !isActive;
+        }
+
+        if (isActive)
+        {
+            crossHair.SetActive(true);
+        }
+        else
+        {
+            crossHair.SetActive(false);
+        }
+
+
 
         rotation.y += Input.GetAxis("Mouse Y") * lookSensitivity;
         rotation.y = Mathf.Clamp(rotation.y, minClamp, maxClamp);
@@ -63,4 +105,7 @@ public class FirstPersonController : MonoBehaviour
     {
         return Physics.Raycast(transform.position, Vector3.down, col.bounds.extents.y + 0.1f);
     }
+
+
+
 }
