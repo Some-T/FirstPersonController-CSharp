@@ -8,7 +8,7 @@
 # Completed:
 
 - Lock cursor = COMPLETE
-- Mouse Look = **NO LONGER COMPLETE**
+- Mouse Look = COMPLETE
 - Rotate Player = COMPLETE
 - Camera Pitch = COMPLETE
 - Clamp up and down = COMPLETE
