@@ -55,13 +55,14 @@ public class FirstPersonController : MonoBehaviour
     {
         float Horizontal = Input.GetAxis("Horizontal");
         float Vertical = Input.GetAxis("Vertical");
+        
+        
         //Vector3 movement = new Vector3(Horizontal, 0, Vertical) * speed * Time.deltaTime;
         //rb.MovePosition(transform.position + movement);
 
 
         Vector3 xMovement = transform.right * speed * Horizontal;
         Vector3 zMovement = transform.forward * speed * Vertical;
-
         rb.MovePosition(transform.position + xMovement + zMovement);
 
 

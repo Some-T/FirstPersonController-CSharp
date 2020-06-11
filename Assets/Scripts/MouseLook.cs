@@ -36,13 +36,6 @@ public class MouseLook : MonoBehaviour
             Quaternion yQuaternion = Quaternion.AngleAxis(rotationY, -Vector3.right);
 
             transform.localRotation = originalRotation * xQuaternion * yQuaternion;
-
-            //transform.Rotate(xQuaternion);
-            //GetComponent<Camera>().transform.Rotate(yQuaternion);
-
-            float horizontal = 0;
-
-            new Vector3(0, horizontal, 0);
         }
 
         if (axes == RotationAxes.MouseX)
