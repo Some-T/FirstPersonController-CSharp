@@ -8,7 +8,7 @@
 # Completed:
 
 - Lock cursor = COMPLETE
-- Mouse Look = COMPLETE
+- Mouse Look = **NO LONGER COMPLETE**
 - Rotate Player = COMPLETE
 - Camera Pitch = COMPLETE
 - Clamp up and down = COMPLETE
@@ -32,4 +32,4 @@
 
 # Issues To Solve:
 
-- Player will go through wall despite having a Rigidbody attached to the game object, mainly when speed of the player is increased.
+- Mouse Look no longer working, where I have now fixed the previous collisions with wall issue

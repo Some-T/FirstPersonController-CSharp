@@ -101,13 +101,13 @@ public class FirstPersonController : MonoBehaviour
             crossHair.SetActive(false);
         }
 
-
+        /*
         rotationX += Input.GetAxis("Mouse X") * sensitivityX;
         rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
         Quaternion xQuaternion = Quaternion.AngleAxis(rotationX, Vector3.up);
         Quaternion yQuaternion = Quaternion.AngleAxis(rotationY, -Vector3.right);
         transform.localRotation = originalRotation * xQuaternion * yQuaternion;
-
+        */
 
 
         /*
