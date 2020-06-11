@@ -25,6 +25,16 @@ public class FirstPersonController : MonoBehaviour
     public Camera cam;
     public GameObject crossHair;
     bool isActive;
+    public float sensitivityX = 15F;
+    public float sensitivityY = 15F;
+    private float rotationX = 0F;
+    private float rotationY = 0F;
+    private Quaternion originalRotation;
+
+
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -46,14 +56,13 @@ public class FirstPersonController : MonoBehaviour
     // Update is called once per frame
         void Update()
     {
-        float Horizontal = Input.GetAxis("Horizontal") * speed;
-        float Vertical = Input.GetAxis("Vertical") * speed;
-        Horizontal *= Time.fixedDeltaTime;
-        Vertical *= Time.fixedDeltaTime;
-        transform.Translate(Horizontal, 0, Vertical);
+        
+        float Horizontal = Input.GetAxis("Horizontal");
+        float Vertical = Input.GetAxis("Vertical");
+        Vector3 movement = new Vector3(Horizontal, 0, Vertical) * speed * Time.deltaTime;
+        rb.MovePosition(transform.position + movement);
 
-        
-        
+
 
         if (isGrounded() && Input.GetButtonDown("Jump"))
 
@@ -93,18 +102,28 @@ public class FirstPersonController : MonoBehaviour
         }
 
 
+        rotationX += Input.GetAxis("Mouse X") * sensitivityX;
+        rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+        Quaternion xQuaternion = Quaternion.AngleAxis(rotationX, Vector3.up);
+        Quaternion yQuaternion = Quaternion.AngleAxis(rotationY, -Vector3.right);
+        transform.localRotation = originalRotation * xQuaternion * yQuaternion;
 
+
+
+        /*
         rotation.y += Input.GetAxis("Mouse Y") * lookSensitivity;
         rotation.y = Mathf.Clamp(rotation.y, minClamp, maxClamp);
         player.transform.RotateAround(transform.position, Vector3.up, Input.GetAxis("Mouse X") * lookSensitivity);
         currentLookRot.y = Mathf.SmoothDamp(currentLookRot.y, rotation.y, ref rotationV.y, lookSmoothDamp);
         cam.transform.localEulerAngles = new Vector3(-currentLookRot.y, 0, 0);
+        */
     }
 
     private bool isGrounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, col.bounds.extents.y + 0.1f);
     }
+
 
 
 
