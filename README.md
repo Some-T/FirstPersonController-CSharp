@@ -33,5 +33,3 @@
 # Issues To Solve:
 
 - Player is able to look through walls and solid objects when running right into them up close, thus if going in at the right angle can still go through walls and solid objects.
-
-[![Image from Gyazo](https://i.gyazo.com/ad45ef9e231fd2f9ec6d4cf76889aece.gif)](https://gyazo.com/ad45ef9e231fd2f9ec6d4cf76889aece)
