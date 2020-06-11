@@ -61,8 +61,8 @@ public class FirstPersonController : MonoBehaviour
         //rb.MovePosition(transform.position + movement);
 
 
-        Vector3 xMovement = transform.right * speed * Horizontal;
-        Vector3 zMovement = transform.forward * speed * Vertical;
+        Vector3 xMovement = transform.right * speed * Horizontal * Time.deltaTime;
+        Vector3 zMovement = transform.forward * speed * Vertical* Time.deltaTime;
         rb.MovePosition(transform.position + xMovement + zMovement);
 
 

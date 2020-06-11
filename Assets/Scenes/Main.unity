@@ -662,8 +662,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   axes: 0
-  sensitivityX: 3
-  sensitivityY: 3
+  sensitivityX: 2
+  sensitivityY: 2
   playerCamera: {fileID: 963194227}
   minimumX: -360
   maximumX: 360

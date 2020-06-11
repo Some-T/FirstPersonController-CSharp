@@ -32,4 +32,4 @@
 
 # Issues To Solve:
 
-- Mouse Look no longer working, where I have now fixed the previous collisions with wall issue. I need to make it so the first person controller has camera relative movement, therefore making the *camera move relative (Camera Relative Movement)* to the mouse position.
+- Player is able to look through walls and solid objects when running right into them up close, thus if going in at the right angle can still go through walls and solid objects.
