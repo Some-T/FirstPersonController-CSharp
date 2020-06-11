@@ -648,6 +648,8 @@ MonoBehaviour:
   lookSmoothDamp: 0.1
   cam: {fileID: 963194227}
   crossHair: {fileID: 607209845}
+  sensitivityX: 15
+  sensitivityY: 15
 --- !u!136 &182261307
 CapsuleCollider:
   m_ObjectHideFlags: 0
