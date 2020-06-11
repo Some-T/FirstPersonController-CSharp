@@ -32,4 +32,4 @@
 
 # Issues To Solve:
 
-- Mouse Look no longer working, where I have now fixed the previous collisions with wall issue
+- Mouse Look no longer working, where I have now fixed the previous collisions with wall issue.
