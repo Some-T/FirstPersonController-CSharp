@@ -14,8 +14,8 @@ public class FirstPersonController : MonoBehaviour
 
 
     private GameObject player;
-    private float minClamp = -45;
-    private float maxClamp = 45;
+    //private float minClamp = -45;
+    //private float maxClamp = 45;
     [HideInInspector]
     public Vector2 rotation;
     private Vector2 currentLookRot;
@@ -25,11 +25,11 @@ public class FirstPersonController : MonoBehaviour
     public Camera cam;
     public GameObject crossHair;
     bool isActive;
-    public float sensitivityX = 15F;
-    public float sensitivityY = 15F;
-    private float rotationX = 0F;
-    private float rotationY = 0F;
-    private Quaternion originalRotation;
+    //public float sensitivityX = 15F;
+    //public float sensitivityY = 15F;
+    //private float rotationX = 0F;
+    //private float rotationY = 0F;
+    //private Quaternion originalRotation;
 
 
 
@@ -51,16 +51,21 @@ public class FirstPersonController : MonoBehaviour
     }
 
 
+    void FixedUpdate()
+    {
+        float Horizontal = Input.GetAxis("Horizontal");
+        float Vertical = Input.GetAxis("Vertical");
+        Vector3 movement = new Vector3(Horizontal, 0, Vertical) * speed * Time.deltaTime;
+        rb.MovePosition(transform.position + movement);
+    }
+
 
 
     // Update is called once per frame
         void Update()
     {
         
-        float Horizontal = Input.GetAxis("Horizontal");
-        float Vertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(Horizontal, 0, Vertical) * speed * Time.deltaTime;
-        rb.MovePosition(transform.position + movement);
+
 
 
 
