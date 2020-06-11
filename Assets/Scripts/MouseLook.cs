@@ -40,7 +40,9 @@ public class MouseLook : MonoBehaviour
             //transform.Rotate(xQuaternion);
             //GetComponent<Camera>().transform.Rotate(yQuaternion);
 
-            //Vector3 rotationX = new Vector3( 0, rotationX, 0)
+            float horizontal = 0;
+
+            new Vector3(0, horizontal, 0);
         }
 
         if (axes == RotationAxes.MouseX)
