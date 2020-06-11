@@ -32,4 +32,4 @@
 
 # Issues To Solve:
 
-- Mouse Look no longer working, where I have now fixed the previous collisions with wall issue.
+- Mouse Look no longer working, where I have now fixed the previous collisions with wall issue. I need to make it so the first person controller has camera relative movement, therefore making the *camera move relative (Camera Relative Movement)* to the mouse position.
