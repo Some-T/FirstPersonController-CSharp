@@ -73,6 +73,8 @@ public class FirstPersonController : MonoBehaviour
         rb.velocity = new Vector3(xMovement.magnitude, 0, zMovement.magnitude) * speed;
 
 
+
+
         if (isGrounded() && Input.GetButtonDown("Jump"))
 
         {
