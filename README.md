@@ -32,6 +32,8 @@
 
 # Issues To Solve:
 
-- Player is able to look through walls and solid objects when running right into them up close, thus if going in at the right angle can still go through walls and solid objects. This issue can be seen in the following video:
+~~- Player is able to look through walls and solid objects when running right into them up close, thus if going in at the right angle can still go through walls and solid objects. This issue can be seen in the following video:
 
-	- https://i.gyazo.com/ad45ef9e231fd2f9ec6d4cf76889aece.mp4
+	- https://i.gyazo.com/ad45ef9e231fd2f9ec6d4cf76889aece.mp4 ~~
+
+- I believe the player going through wall issue is now resolved, however to solve this I have begun implementing velocity for player movement which has now had the following effect to which I believe my code to be incorrect, basically the player is not moving in the direction the camera is facing.
