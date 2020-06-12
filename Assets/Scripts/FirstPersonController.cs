@@ -31,8 +31,9 @@ public class FirstPersonController : MonoBehaviour
     //private float rotationY = 0F;
     //private Quaternion originalRotation;
 
-
-
+    //public float thrust = 1.0f;
+    float HorizontalInput;
+    float VerticalInput;
 
 
 
@@ -51,30 +52,16 @@ public class FirstPersonController : MonoBehaviour
     }
 
 
-    void FixedUpdate()
-    {
-        float Horizontal = Input.GetAxis("Horizontal");
-        float Vertical = Input.GetAxis("Vertical");
-        
-        
-        //Vector3 movement = new Vector3(Horizontal, 0, Vertical) * speed * Time.deltaTime;
-        //rb.MovePosition(transform.position + movement);
 
-
-        Vector3 xMovement = transform.right * speed * Horizontal * Time.deltaTime;
-        Vector3 zMovement = transform.forward * speed * Vertical* Time.deltaTime;
-        rb.MovePosition(transform.position + xMovement + zMovement);
-
-
-    }
 
 
 
     // Update is called once per frame
         void Update()
     {
-        
 
+        float HorizontalInput = Input.GetAxis("Horizontal");
+        float VerticalInput = Input.GetAxis("Vertical");
 
 
 
@@ -132,6 +119,33 @@ public class FirstPersonController : MonoBehaviour
         cam.transform.localEulerAngles = new Vector3(-currentLookRot.y, 0, 0);
         */
     }
+
+
+        void FixedUpdate()
+        {
+
+
+
+            //Vector3 movement = new Vector3(Horizontal, 0, Vertical) * speed * Time.deltaTime;
+            //rb.MovePosition(transform.position + movement);
+
+            // https://docs.unity3d.com/ScriptReference/Rigidbody.AddForce.html
+            // https://catlikecoding.com/unity/tutorials/movement/physics/
+            // https://docs.unity3d.com/ScriptReference/Rigidbody-velocity.html
+
+            Vector3 xMovement = transform.right * speed * HorizontalInput * Time.deltaTime;
+            Vector3 zMovement = transform.forward * speed * VerticalInput * Time.deltaTime;
+            //rb.MovePosition(transform.position + xMovement + zMovement);
+            //rb.AddForce(transform.position + xMovement + zMovement);
+            //rb.AddForce(xMovement + zMovement * speed * Time.deltaTime);
+            //rb.AddForce(transform.forward * thrust);
+            //rb.AddForce((xMovement + zMovement) * thrust);
+
+
+        }
+
+
+
 
     private bool isGrounded()
     {
