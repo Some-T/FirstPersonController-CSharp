@@ -70,7 +70,7 @@ public class FirstPersonController : MonoBehaviour
     {
         Vector3 xMovement = transform.right * speed * HorizontalInput * Time.deltaTime;
         Vector3 zMovement = transform.forward * speed * VerticalInput * Time.deltaTime;
-        rb.velocity = new Vector3(HorizontalInput, 0, VerticalInput) * speed;
+        rb.velocity = new Vector3(xMovement.magnitude, 0, zMovement.magnitude) * speed;
 
 
 
