@@ -9,16 +9,14 @@ using Cursor = UnityEngine.Cursor;
 
 public class FirstPersonController : MonoBehaviour
 {
-    public float speed = 5;
-    public float jumpPower = 4;
+    private float speed = 5;
+    private float jumpPower = 4;
     Rigidbody rb;
     CapsuleCollider col;
     public GameObject crossHair;
     bool isActive;
     float HorizontalInput;
     float VerticalInput;
-
-
 
 
     void Start()
@@ -33,15 +31,8 @@ public class FirstPersonController : MonoBehaviour
 
     void Update()
     {
-
-        float HorizontalInput = Input.GetAxis("Horizontal");
-        float VerticalInput = Input.GetAxis("Vertical");
-
-        if (isGrounded() && Input.GetButtonDown("Jump"))
-
-        {
-            rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
-        }
+        HorizontalInput = Input.GetAxisRaw("Horizontal");
+        VerticalInput = Input.GetAxisRaw("Vertical");
 
         if (Input.GetKeyDown("escape"))
         {
@@ -78,8 +69,15 @@ public class FirstPersonController : MonoBehaviour
     {
         Vector3 xMovement = transform.right * speed * HorizontalInput * Time.deltaTime;
         Vector3 zMovement = transform.forward * speed * VerticalInput * Time.deltaTime;
-    }
+        rb.AddForce(xMovement + zMovement);
 
+        if (isGrounded() && Input.GetButtonDown("Jump"))
+
+        {
+            rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+        }
+    }
+    
 
     private bool isGrounded()
     {
