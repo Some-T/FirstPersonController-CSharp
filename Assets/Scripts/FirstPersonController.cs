@@ -62,6 +62,7 @@ public class FirstPersonController : MonoBehaviour
         {
             crossHair.SetActive(false);
         }
+        
     }
 
 
@@ -69,7 +70,9 @@ public class FirstPersonController : MonoBehaviour
     {
         Vector3 xMovement = transform.right * speed * HorizontalInput * Time.deltaTime;
         Vector3 zMovement = transform.forward * speed * VerticalInput * Time.deltaTime;
-        rb.velocity = new Vector3(HorizontalInput, 0, VerticalInput);
+        rb.velocity = new Vector3(HorizontalInput, 0, VerticalInput) * speed;
+
+
 
         if (isGrounded() && Input.GetButtonDown("Jump"))
 
