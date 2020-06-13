@@ -479,8 +479,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6bdd1a04ffde4546afbac07717067d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerCamera: {fileID: 963194227}
   crossHair: {fileID: 607209845}
-  thrust: 1
 --- !u!114 &182261306
 MonoBehaviour:
   m_ObjectHideFlags: 0

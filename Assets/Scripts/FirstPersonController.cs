@@ -9,10 +9,11 @@ using Cursor = UnityEngine.Cursor;
 
 public class FirstPersonController : MonoBehaviour
 {
-    private float speed = 5;
+    public float speed = 15;
     private float jumpPower = 4;
     Rigidbody rb;
     CapsuleCollider col;
+    public Camera PlayerCamera;
     public GameObject crossHair;
     bool isActive;
     float HorizontalInput;
@@ -41,12 +42,12 @@ public class FirstPersonController : MonoBehaviour
 
         if (Input.GetButtonDown("Sprint"))
         {
-            speed = 15;
+            speed = 30;
         }
 
         if (Input.GetButtonUp("Sprint"))
         {
-            speed = 5;
+            speed = 15;
         }
 
         if (Input.GetKeyDown(KeyCode.H))
@@ -68,10 +69,18 @@ public class FirstPersonController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 xMovement = transform.right * speed * HorizontalInput * Time.deltaTime;
-        Vector3 zMovement = transform.forward * speed * VerticalInput * Time.deltaTime;
-        rb.velocity = new Vector3(xMovement.magnitude, 0, zMovement.magnitude) * speed;
+        //Vector3 xMovement = transform.right * speed * HorizontalInput * Time.deltaTime;
+        //Vector3 zMovement = transform.forward * speed * VerticalInput * Time.deltaTime;
+        //rb.velocity = new Vector3(xMovement.magnitude, 0, zMovement.magnitude) * speed;
 
+        Vector3 xMovement = PlayerCamera.transform.right * HorizontalInput;
+        Vector3 zMovement = PlayerCamera.transform.forward * VerticalInput;
+        rb.velocity = (xMovement + zMovement).normalized * speed;
+
+        Vector3 forward = PlayerCamera.transform.forward;
+        forward.y = 0;
+        forward.Normalize();
+        zMovement = forward * VerticalInput;
 
         if (isGrounded() && Input.GetButtonDown("Jump"))
 
