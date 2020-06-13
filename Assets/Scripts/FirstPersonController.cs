@@ -9,7 +9,7 @@ using Cursor = UnityEngine.Cursor;
 
 public class FirstPersonController : MonoBehaviour
 {
-    public float speed = 15;
+    private float speed = 5;
     private float jumpPower = 4;
     Rigidbody rb;
     CapsuleCollider col;
@@ -42,12 +42,14 @@ public class FirstPersonController : MonoBehaviour
 
         if (Input.GetButtonDown("Sprint"))
         {
-            speed = 30;
+            speed = 15;
+            Debug.Log("Speed is now: " + speed);
         }
 
         if (Input.GetButtonUp("Sprint"))
         {
-            speed = 15;
+            speed = 5;
+            Debug.Log("Speed is now: " + speed);
         }
 
         if (Input.GetKeyDown(KeyCode.H))
@@ -69,13 +71,11 @@ public class FirstPersonController : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Vector3 xMovement = transform.right * speed * HorizontalInput * Time.deltaTime;
-        //Vector3 zMovement = transform.forward * speed * VerticalInput * Time.deltaTime;
-        //rb.velocity = new Vector3(xMovement.magnitude, 0, zMovement.magnitude) * speed;
-
         Vector3 xMovement = PlayerCamera.transform.right * HorizontalInput;
         Vector3 zMovement = PlayerCamera.transform.forward * VerticalInput;
-        rb.velocity = (xMovement + zMovement).normalized * speed;
+        Vector3 velocity = (xMovement + zMovement).normalized * speed;
+        velocity.y = rb.velocity.y;
+        rb.velocity = velocity;
 
         Vector3 forward = PlayerCamera.transform.forward;
         forward.y = 0;

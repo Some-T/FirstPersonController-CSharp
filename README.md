@@ -20,20 +20,33 @@
 
 
 # To Do:
-
+- Jumping fine tuning
+- Running and jumping
+- Shooting projectiles from the player (Raycasting?)
 - Have Camera act as parent object
 - Crouching (with raycasting extra)
 	- Ceiling raycast
-- Shooting projectiles from the player (Raycasting?)
 - Melee Attack from the player
-- Pick up objects
+- Pick up objects (I believe raycasting is the best way to do this)
 - Interact with objects, e.g. pressing a button
 
 
-# Issues To Solve:
+# Current Issues To Solve:
+
+
+
+
+## No longer issues, solved:
 
 ~~- Player is able to look through walls and solid objects when running right into them up close, thus if going in at the right angle can still go through walls and solid objects. This issue can be seen in the following video:~~
 
-	~~- https://i.gyazo.com/ad45ef9e231fd2f9ec6d4cf76889aece.mp4~~
+	~~- i.gyazo.com/ad45ef9e231fd2f9ec6d4cf76889aece.mp4~~
 
-- I believe the player going through wall issue is now resolved, however to solve this I have begun implementing velocity for player movement which has now had the following effect to which I believe my code to be incorrect, basically the player is not moving in the direction the camera is facing.
+~~- I believe the player going through wall issue is now resolved, however to solve this I have begun implementing velocity for player movement which has now had the following effect to which I believe my code to be incorrect, basically the player is not moving in the direction the camera is facing.~~
+
+**For the below two issues, Freezing the Y rotation, for some reason? Seemed to solve them and stop them from happening:**
+
+~~- Player can run on the walls currently, even adding an higher mass does not prevent this, would a shapecast or raycast solve this issue perhaps?~~
+
+~~- As per the below video, the player even just by sprinting or walking, after a short while will start moving on its own without any key presses, I find  when the player collides with an object it will set this off mostly instantaneously.~~
+	~~- https://i.gyazo.com/f5dc989e3f832f0632003e842d850cc8.mp4~~
