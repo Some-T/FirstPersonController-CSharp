@@ -33,7 +33,7 @@
 
 # Current Issues To Solve:
 
-
+No current issues to solve!
 
 
 ## No longer issues, solved:
@@ -49,4 +49,4 @@
 ~~- Player can run on the walls currently, even adding an higher mass does not prevent this, would a shapecast or raycast solve this issue perhaps?~~
 
 ~~- As per the below video, the player even just by sprinting or walking, after a short while will start moving on its own without any key presses, I find  when the player collides with an object it will set this off mostly instantaneously.~~
-	~~- https://i.gyazo.com/f5dc989e3f832f0632003e842d850cc8.mp4~~
+	~~- i.gyazo.com/f5dc989e3f832f0632003e842d850cc8.mp4~~
