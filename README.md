@@ -20,8 +20,6 @@
 
 
 # To Do:
-- Jumping fine tuning
-- Running and jumping
 - Shooting projectiles from the player (Raycasting?)
 - Have Camera act as parent object
 - Crouching (with raycasting extra)
