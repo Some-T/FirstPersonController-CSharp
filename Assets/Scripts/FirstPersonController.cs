@@ -10,7 +10,7 @@ using Cursor = UnityEngine.Cursor;
 public class FirstPersonController : MonoBehaviour
 {
     private float speed = 5;
-    private float jumpPower = 4;
+    private float jumpPower = 10;
     Rigidbody rb;
     CapsuleCollider col;
     public Camera PlayerCamera;
