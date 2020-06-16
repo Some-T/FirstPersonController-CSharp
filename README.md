@@ -20,6 +20,7 @@
 
 
 # To Do:
+- Make Jumping more fluid, sometimes when I push space bar I have to push it again to make the player jump instantly.
 - Shooting projectiles from the player (Raycasting?)
 - Have Camera act as parent object
 - Crouching (with raycasting extra)
