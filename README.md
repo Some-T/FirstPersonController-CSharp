@@ -1,8 +1,8 @@
 # Instructions:
 
-- Tested in Unity 2019.4.0f1 LTS
+- Tested in Unity 2020.1.0f1
 - Requires ProBuilder to be installed from the Unity package manager.
-- Open Main Unity scene and utilise and modify the first person controller as you wish, utilising ProBuilder will make it easy to modify according to your game.
+- Open Main Unity scene and utilise and modify the first person controller as you wish, utilising ProBuilder will make it easy to modify and prototype according to your game.
 
 
 # Completed:
@@ -17,11 +17,12 @@
 - Jump = COMPLETE
 - Ground Check = COMPLETE
 - Hide crosshair = COMPLETE
+- Make Jumping more fluid = COMPLETE
 
 
 # To Do:
-- Make Jumping more fluid, sometimes when I push space bar I have to push it again to make the player jump instantly.
-- Shooting projectiles from the player (Raycasting?)
+
+- Shooting projectiles from the player not using raycasting (I can use raycasting, but this means enemies and such can not dodge the bullet)
 - Have Camera act as parent object
 - Crouching (with raycasting extra)
 	- Ceiling raycast
