@@ -22,12 +22,12 @@
 
 # To Do:
 
-- Shooting projectiles from the player not using raycasting (I can use raycasting, but this means enemies and such can not dodge the bullet)
+- Pick up objects, move object with player whilst holding and such throw objects (https://docs.unity3d.com/ScriptReference/Physics.OverlapSphere.html)
+- Shooting projectiles from the player not using raycasting (I can use raycasting, but this means enemies and such can not dodge the bullet, so ideally don't use raycasting for this)
 - Have Camera act as parent object
 - Crouching (with raycasting extra)
 	- Ceiling raycast
 - Melee Attack from the player
-- Pick up objects (I believe raycasting is the best way to do this)
 - Interact with objects, e.g. pressing a button
 
 
