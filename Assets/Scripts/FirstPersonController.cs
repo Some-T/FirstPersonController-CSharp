@@ -18,6 +18,7 @@ public class FirstPersonController : MonoBehaviour
     bool isActive;
     float HorizontalInput;
     float VerticalInput;
+    public GameObject mainPlayer;
 
 
     void Start()
@@ -27,6 +28,7 @@ public class FirstPersonController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
         crossHair = GameObject.FindWithTag("CrossHair");
+        mainPlayer = GameObject.FindWithTag("Player");
     }
 
 
@@ -68,6 +70,18 @@ public class FirstPersonController : MonoBehaviour
         {
             speed = 5;
             Debug.Log("Speed is now: " + speed);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            mainPlayer.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
+            Debug.Log("Left control held down");
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            mainPlayer.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            Debug.Log("Left control no longer held down");
         }
 
         if (Input.GetKeyDown(KeyCode.H))

@@ -18,14 +18,15 @@
 - Ground Check = COMPLETE
 - Hide crosshair = COMPLETE
 - Make Jumping more fluid = COMPLETE
+- Basic crouching without raycasting = COMPLETE
 
 
 # To Do:
 
 - Pick up objects, move object with player whilst holding and such throw objects (https://docs.unity3d.com/ScriptReference/Physics.OverlapSphere.html)
 - Shooting projectiles from the player not using raycasting (I can use raycasting, but this means enemies and such can not dodge the bullet, so ideally don't use raycasting for this)
-- Have Camera act as parent object
-- Crouching (with raycasting extra)
+- Have Camera act as parent object? I can't actually remember why I thought to do this initially but left it in here just incase.
+- Crouching (with raycasting extra) (These two aspects will be so when I crouch in a tunnel and stand up, that I do not go through the ceiling)
 	- Ceiling raycast
 - Melee Attack from the player
 - Interact with objects, e.g. pressing a button
