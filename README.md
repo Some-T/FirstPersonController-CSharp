@@ -25,9 +25,10 @@
 
 - Crouching (with raycasting extra) (These two aspects will be so when I crouch in a tunnel and stand up, that I do not go through the ceiling)
 	- Ceiling raycast
+- Have Camera act as parent object? I can't actually remember why I thought to do this initially but left it in here just incase. I think may have been something to do with the Ceiling raycast for when I crouch?
 - Pick up objects, move object with player whilst holding and such throw objects (https://docs.unity3d.com/ScriptReference/Physics.OverlapSphere.html)
 - Shooting projectiles from the player not using raycasting (I can use raycasting, but this means enemies and such can not dodge the bullet, so ideally don't use raycasting for this)
-- Have Camera act as parent object? I can't actually remember why I thought to do this initially but left it in here just incase. I think may have been something to do with the Ceiling raycast for when I crouch?
+
 - Melee Attack from the player
 - Interact with objects, e.g. pressing a button
 
