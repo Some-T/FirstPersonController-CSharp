@@ -93,11 +93,7 @@ public class FirstPersonController : MonoBehaviour
             // Don't stand up
             mainPlayer.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
         }
-        else
-        {
-            // OK to stand up
-            mainPlayer.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-        }
+
 
 
         if (Input.GetKeyDown(KeyCode.H))
