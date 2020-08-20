@@ -27,11 +27,16 @@
 - Pick up objects, move object with player whilst holding and such throw objects (https://docs.unity3d.com/ScriptReference/Physics.OverlapSphere.html)
 - Melee Attack from the player
 - Interact with objects, e.g. pressing a button
+- Tweak gravity for when player jumps.
+- Tweak clamping for when the player looks up and down.
+- Tweak speed possibly?
 
 
 # Current Issues To Solve:
 
-No current issues to solve!
+- Player sometimes sticks to the wall when running and jumping into it.
+- Stop player slightly jumping automatically when exiting a tunnel from crouching.
+
 
 ## No longer issues, solved:
 
