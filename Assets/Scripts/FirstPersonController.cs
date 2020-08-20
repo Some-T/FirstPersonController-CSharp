@@ -19,7 +19,7 @@ public class FirstPersonController : MonoBehaviour
     float HorizontalInput;
     float VerticalInput;
     public GameObject mainPlayer;
-
+    float mainPlayerHeight;
 
     void Start()
     {
@@ -29,7 +29,8 @@ public class FirstPersonController : MonoBehaviour
         col = GetComponent<CapsuleCollider>();
         crossHair = GameObject.FindWithTag("CrossHair");
         mainPlayer = GameObject.FindWithTag("Player");
-    }
+        mainPlayerHeight = col.height;
+}
 
 
     void Update()
@@ -83,6 +84,21 @@ public class FirstPersonController : MonoBehaviour
             mainPlayer.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             Debug.Log("Left control no longer held down");
         }
+
+
+        
+
+        if (Physics.Raycast(transform.position, Vector3.up, mainPlayerHeight / 2))
+        {
+            // Don't stand up
+            mainPlayer.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
+        }
+        else
+        {
+            // OK to stand up
+            mainPlayer.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        }
+
 
         if (Input.GetKeyDown(KeyCode.H))
         {
