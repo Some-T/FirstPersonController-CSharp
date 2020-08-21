@@ -36,6 +36,7 @@
 
 - Player sometimes sticks to the wall when running and jumping into it.
 - Stop player slightly jumping automatically when exiting a tunnel from crouching.
+- When crouched in the tunnel, if I jump (pressing space bar) the player will clip through the ceiling slightly.
 
 
 ## No longer issues, solved:
