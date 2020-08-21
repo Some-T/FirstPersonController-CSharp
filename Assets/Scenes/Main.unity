@@ -487,6 +487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerCamera: {fileID: 963194227}
   crossHair: {fileID: 607209845}
+  mainPlayer: {fileID: 182261304}
 --- !u!114 &182261306
 MonoBehaviour:
   m_ObjectHideFlags: 0

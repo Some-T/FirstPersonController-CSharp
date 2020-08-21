@@ -23,12 +23,12 @@
 
 # To Do:
 
-- Shooting projectiles from the player not using raycasting (I can use raycasting, but this means enemies and such can not dodge the bullet, so ideally don't use raycasting for this)
+- Shooting projectiles from the player not using raycasting (I can use raycasting, but this means enemies and such can not dodge the bullet, so ideally don't use raycasting for this) do as a laser shooting, so then I don't have to bother with arm animations and such, e.g. could be like its shooting two beams consistently from the players eyes, but the beams move physical objects as well as destroy after a while (when life of object reaches 0) could do press key once shoots two laser bullets from the eyes, hold key down shoots laser beams from the eyes.
 - Pick up objects, move object with player whilst holding and such throw objects (https://docs.unity3d.com/ScriptReference/Physics.OverlapSphere.html)
 - Melee Attack from the player
 - Interact with objects, e.g. pressing a button
 - Tweak gravity for when player jumps.
-- Tweak clamping for when the player looks up and down.
+- Tweak clamping for when the player looks up and down so thats its further / more.
 - Tweak speed possibly?
 
 
