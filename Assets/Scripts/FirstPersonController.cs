@@ -87,7 +87,23 @@ public class FirstPersonController : MonoBehaviour
             Debug.Log("Left control no longer held down");
         }
 
+        /*
+        bool isKeyUp = Input.GetKeyUp(KeyCode.LeftControl);
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+        isKeyUp = false;
+        mainPlayer.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
+        jumpPower = 0;
+        Debug.Log("Left control held down");
+        }
 
+        if (isKeyUp && !Physics.Raycast(transform.position, Vector3.up, (mainPlayerHeight / 2)+0.1f))
+        {
+        mainPlayer.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        jumpPower = 5;
+        Debug.Log("Left control no longer held down");
+        }
+        */
 
 
         if (Input.GetKeyDown(KeyCode.H))
