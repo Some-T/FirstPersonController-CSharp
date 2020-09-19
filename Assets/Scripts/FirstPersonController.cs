@@ -72,7 +72,7 @@ public class FirstPersonController : MonoBehaviour
             speed = 5;
             Debug.Log("Speed is now: " + speed);
         }
-
+        /*
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             mainPlayer.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
@@ -86,6 +86,29 @@ public class FirstPersonController : MonoBehaviour
             jumpPower = 5;
             Debug.Log("Left control no longer held down");
         }
+        */
+        int caseSwitch = 1;
+
+        switch (caseSwitch)
+        {
+            case 1:
+                if (Input.GetKeyDown(KeyCode.LeftControl))
+                {
+                    Debug.Log("Case 1");
+                }
+                break;
+            case 2:
+                if (Input.GetKey(KeyCode.LeftControl))
+                {
+                    Debug.Log("Case 2");
+                }
+                break;
+            default:
+                Debug.Log("Default case");
+                break;
+        }
+    
+
 
         /*
         bool isKeyUp = Input.GetKeyUp(KeyCode.LeftControl);
