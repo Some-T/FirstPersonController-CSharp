@@ -35,8 +35,7 @@
 # Current Issues To Solve:
 
 - Player sometimes sticks to the wall when running and jumping into it.
-- Stop player slightly jumping automatically when exiting a tunnel from crouching.
-- When crouched in the tunnel, if I jump (pressing space bar) the player will clip through the ceiling slightly.
+- Stop player slightly jumping automatically when exiting a tunnel from crouching additionally make it the player stands up automatically when exiting the tunnel?
 - As per comments in file `FirstPersonController.cs` ensure the bool works in order to stop it repeating one of the if functions.
 
 
