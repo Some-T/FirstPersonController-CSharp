@@ -30,7 +30,7 @@ public class FirstPersonController : MonoBehaviour
         crossHair = GameObject.FindWithTag("CrossHair");
         mainPlayer = GameObject.FindWithTag("Player");
         mainPlayerHeight = col.height;
-}
+    }
 
 
     void Update()
@@ -72,21 +72,7 @@ public class FirstPersonController : MonoBehaviour
             speed = 5;
             Debug.Log("Speed is now: " + speed);
         }
-        /*
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            mainPlayer.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
-            jumpPower = 0;
-            Debug.Log("Left control held down");
-        }
 
-        if (!Input.GetKey(KeyCode.LeftControl) && !Physics.Raycast(transform.position, Vector3.up, (mainPlayerHeight / 2)+0.1f))
-        {
-            mainPlayer.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-            jumpPower = 5;
-            Debug.Log("Left control no longer held down");
-        }
-        */
         int caseSwitch = 1;
 
         switch (caseSwitch)
@@ -94,21 +80,43 @@ public class FirstPersonController : MonoBehaviour
             case 1:
                 if (Input.GetKeyDown(KeyCode.LeftControl))
                 {
-                    Debug.Log("Case 1");
+                    mainPlayer.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
+                    jumpPower = 0;
+                    Debug.Log("Left control held down");
                 }
-                break;
-            case 2:
-                if (Input.GetKey(KeyCode.LeftControl))
+                else
                 {
-                    Debug.Log("Case 2");
+                    goto case 2;
                 }
-                break;
+                    break;
+            case 2:
+                if (Input.GetKeyUp(KeyCode.LeftControl) && !Physics.Raycast(transform.position, Vector3.up, (mainPlayerHeight / 2) + 0.1f))
+                {
+                    mainPlayer.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+                    jumpPower = 5;
+                    Debug.Log("Left control no longer held down");
+                }
+                    break;
             default:
                 Debug.Log("Default case");
                 break;
         }
-    
 
+        /*
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+        mainPlayer.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
+        jumpPower = 0;
+        Debug.Log("Left control held down");
+        }
+
+        if (!Input.GetKey(KeyCode.LeftControl) && !Physics.Raycast(transform.position, Vector3.up, (mainPlayerHeight / 2)+0.1f))
+        {
+        mainPlayer.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        jumpPower = 5;
+        Debug.Log("Left control no longer held down");
+        }
+*/
 
         /*
         bool isKeyUp = Input.GetKeyUp(KeyCode.LeftControl);
