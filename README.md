@@ -34,7 +34,7 @@
 
 # Current Issues To Solve:
 
-- Player sometimes sticks to the wall when running and jumping into it.
+- Player sticks to the wall when running and jumping into it.
 
 
 
