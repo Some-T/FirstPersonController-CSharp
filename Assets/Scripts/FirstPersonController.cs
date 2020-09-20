@@ -74,6 +74,8 @@ public class FirstPersonController : MonoBehaviour
         }
 
         int caseSwitch = 1;
+        bool keyPress = false;
+
 
         switch (caseSwitch)
         {
@@ -82,21 +84,33 @@ public class FirstPersonController : MonoBehaviour
                 {
                     mainPlayer.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
                     jumpPower = 0;
-                    Debug.Log("Left control held down");
+                    Debug.Log("Case 1");
+                    keyPress = true;
                 }
-                else
+                else if (keyPress == true && Input.GetKeyDown(KeyCode.LeftControl))
                 {
                     goto case 2;
-                }
+                    }
                     break;
             case 2:
-                if (Input.GetKeyUp(KeyCode.LeftControl) && !Physics.Raycast(transform.position, Vector3.up, (mainPlayerHeight / 2) + 0.1f))
-                {
+                
                     mainPlayer.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
                     jumpPower = 5;
-                    Debug.Log("Left control no longer held down");
+                    Debug.Log("Case 2");
+                    
+                /*if (!Physics.Raycast(transform.position, Vector3.up, (mainPlayerHeight / 2) + 0.1f)) 
+                {
+                goto case 3;
+                }*/
+                break;
+            case 3:
+                {
+                    mainPlayer.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
+                    jumpPower = 5;
+                    Debug.Log("Case 2");
                 }
-                    break;
+                break;
+
             default:
                 Debug.Log("Default case");
                 break;
