@@ -35,8 +35,7 @@
 # Current Issues To Solve:
 
 - Player sometimes sticks to the wall when running and jumping into it.
-- Make it the player stands up automatically when exiting the tunnel.
-- Stop player slightly jumping automatically when exiting a tunnel from crouching additionally.
+
 
 
 ## No longer issues, solved:

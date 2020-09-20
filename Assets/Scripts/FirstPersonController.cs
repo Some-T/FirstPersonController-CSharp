@@ -73,84 +73,25 @@ public class FirstPersonController : MonoBehaviour
             Debug.Log("Speed is now: " + speed);
         }
 
-        int caseSwitch = 1;
-        bool keyPress = false;
 
 
-        switch (caseSwitch)
-        {
-            case 1:
-                if (Input.GetKeyDown(KeyCode.LeftControl))
-                {
-                    mainPlayer.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
-                    jumpPower = 0;
-                    Debug.Log("Case 1");
-                    keyPress = true;
-                }
-                else if (keyPress == true && Input.GetKeyDown(KeyCode.LeftControl))
-                {
-                    goto case 2;
-                    }
-                    break;
-            case 2:
-                
-                    mainPlayer.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-                    jumpPower = 5;
-                    Debug.Log("Case 2");
-                    
-                /*if (!Physics.Raycast(transform.position, Vector3.up, (mainPlayerHeight / 2) + 0.1f)) 
-                {
-                goto case 3;
-                }*/
-                break;
-            case 3:
-                {
-                    mainPlayer.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
-                    jumpPower = 5;
-                    Debug.Log("Case 2");
-                }
-                break;
 
-            default:
-                Debug.Log("Default case");
-                break;
-        }
 
-        /*
+
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-        mainPlayer.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
-        jumpPower = 0;
-        Debug.Log("Left control held down");
+            if (IsDucking == false)
+            {
+                IsDucking = true;
+            }
+            else if (!Physics.Raycast(transform.position, Vector3.up, (mainPlayerHeight / 2) + 0.1f))
+            {
+                IsDucking = false;
+            }
+
         }
 
-        if (!Input.GetKey(KeyCode.LeftControl) && !Physics.Raycast(transform.position, Vector3.up, (mainPlayerHeight / 2)+0.1f))
-        {
-        mainPlayer.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-        jumpPower = 5;
-        Debug.Log("Left control no longer held down");
-        }
-*/
-
-        /*
-        bool isKeyUp = Input.GetKeyUp(KeyCode.LeftControl);
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-        isKeyUp = false;
-        mainPlayer.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
-        jumpPower = 0;
-        Debug.Log("Left control held down");
-        }
-
-        if (isKeyUp && !Physics.Raycast(transform.position, Vector3.up, (mainPlayerHeight / 2)+0.1f))
-        {
-        mainPlayer.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-        jumpPower = 5;
-        Debug.Log("Left control no longer held down");
-        }
-        */
-
-
+      
         if (Input.GetKeyDown(KeyCode.H))
         {
             isActive = !isActive;
@@ -165,6 +106,31 @@ public class FirstPersonController : MonoBehaviour
             crossHair.SetActive(false);
         }
     }
+
+
+    private bool IsDucking
+    {
+        get
+        {
+            return isDucking;
+        }
+        set
+        {
+            isDucking = value;
+            if (isDucking)
+            {
+                mainPlayer.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
+                jumpPower = 0;
+            }
+            else
+            {
+                mainPlayer.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+                jumpPower = 5;
+            }
+        }
+    }
+    private bool isDucking;
+
 
     private bool isGrounded()
     {
