@@ -25,7 +25,7 @@ public class FirstPersonController : MonoBehaviour
     public float moveForce = 250;
     public Transform holdParent;
     private GameObject heldObj;
-
+    bool enablePickup = true;
 
 
     void Start()
@@ -57,9 +57,9 @@ public class FirstPersonController : MonoBehaviour
 
 
 
-
-
-        if (Input.GetMouseButtonDown(0))
+        if (enablePickup)
+        { 
+        if (Input.GetMouseButton(0))
         {
             if (heldObj == null)
             {
@@ -69,15 +69,17 @@ public class FirstPersonController : MonoBehaviour
                     PickupObject(hit.transform.gameObject);
                 }
             }
-            else 
-            {
-                DropObject();
-            }
             if (heldObj != null)
             {
                 MoveObject();
             }
         }
+        else if (heldObj != null)
+        {
+            DropObject();
+        }
+        }
+
 
 
 
@@ -156,6 +158,7 @@ public class FirstPersonController : MonoBehaviour
             objRig.drag = 10;
 
             objRig.transform.parent = holdParent;
+            heldObj = pickObj;
         }
     }
 
@@ -190,13 +193,17 @@ public class FirstPersonController : MonoBehaviour
             isDucking = value;
             if (isDucking)
             {
+                DropObject();
+                enablePickup = false;
                 mainPlayer.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
                 jumpPower = 0;
+                
             }
             else
             {
                 mainPlayer.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 jumpPower = 5;
+                enablePickup = true;
             }
         }
     }

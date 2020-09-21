@@ -23,14 +23,24 @@
 
 # To Do:
 
-- Clean up code, add comments in and sort into sections where possible so I know what each part of the code is doing.
-- Shooting projectiles from the player not using raycasting (I can use raycasting, but this means enemies and such can not dodge the bullet, so ideally don't use raycasting for this) do as a laser shooting, so then I don't have to bother with arm animations and such, e.g. could be like its shooting two beams consistently from the players eyes, but the beams move physical objects as well as destroy after a while (when life of object reaches 0) could do press key once shoots two laser bullets from the eyes, hold key down shoots laser beams from the eyes.
-- Pick up objects, move object with player whilst holding and such throw objects (https://docs.unity3d.com/ScriptReference/Physics.OverlapSphere.html)
-- Melee Attack from the player
+- Pick up objects, move object with player whilst holding and such throw objects.
+	- Todo still for this:
+		- Stop the issue, where it is picking up the object on the corner of it.
+		- Throw the object
+		- Stop object changing size, when I crouch with the object, I have disabled picking up an object and to drop it when crouching but it still changes the scale / size of the object slightly.
+			- It is also doing this slightly when normally picking up an object but not as much.
+		- Need to fix automatically dropping the object when crouching, and disabling picking up objects completely when crouching, currently it is only letting me crouch just after I have picked up an object, no longer when I have no object at all.
 - Interact with objects, e.g. pressing a button
+- Picking up a gun of some sort then:
+	- Shooting projectiles from the player not using raycasting (I can use raycasting, but this means enemies and such can not dodge the bullet, so ideally don't use raycasting for this) do as a laser shooting, so then I don't have to bother with arm animations and such, e.g. could be like its shooting two beams consistently from the players eyes, but the beams move physical objects as well as destroy after a while (when life of object reaches 0) could do press key once shoots two laser bullets from the eyes, hold key down shoots laser beams from the eyes. (Gun will have unlimited ammo or be a laser gun)
+	- Drop gun
+- Picking up a Melee weapon then 
+	- Melee Attack from the player (e.g. hitting an object with a stick)
+	- Drop melee weapon
 - Tweak gravity for when player jumps.
 - Tweak clamping for when the player looks up and down so thats its further / more.
 - Tweak speed possibly?
+- Clean up code, add comments in and sort into sections where possible so I know what each part of the code is doing.
 
 
 # Current Issues To Solve:
