@@ -21,6 +21,13 @@ public class FirstPersonController : MonoBehaviour
     public GameObject mainPlayer;
     float mainPlayerHeight;
 
+    public float pickUpRange = 5;
+    public float moveForce = 250;
+    public Transform holdParent;
+    private GameObject heldObj;
+
+
+
     void Start()
     {
         Cursor.visible = false;
@@ -41,12 +48,44 @@ public class FirstPersonController : MonoBehaviour
         Vector3 zMovement = PlayerCamera.transform.forward * VerticalInput;
         Vector3 velocity = (xMovement + zMovement).normalized * speed;
         Vector3 forward = PlayerCamera.transform.forward;
-        
+
         velocity.y = rb.velocity.y;
         rb.velocity = velocity;
         forward.y = 0;
         forward.Normalize();
         zMovement = forward * VerticalInput;
+
+
+
+
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (heldObj == null)
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange))
+                {
+                    PickupObject(hit.transform.gameObject);
+                }
+            }
+            else 
+            {
+                DropObject();
+            }
+            if (heldObj != null)
+            {
+                MoveObject();
+            }
+        }
+
+
+
+
+
+
+
+
 
         if (isGrounded() && Input.GetButtonDown("Jump"))
 
@@ -91,7 +130,7 @@ public class FirstPersonController : MonoBehaviour
 
         }
 
-      
+
         if (Input.GetKeyDown(KeyCode.H))
         {
             isActive = !isActive;
@@ -105,6 +144,38 @@ public class FirstPersonController : MonoBehaviour
         {
             crossHair.SetActive(false);
         }
+    }
+
+
+    void PickupObject(GameObject pickObj)
+    {
+        if (pickObj.GetComponent<Rigidbody>())
+        {
+            Rigidbody objRig = pickObj.GetComponent<Rigidbody>();
+            objRig.useGravity = false;
+            objRig.drag = 10;
+
+            objRig.transform.parent = holdParent;
+        }
+    }
+
+    void MoveObject()
+    {
+        if (Vector3.Distance(heldObj.transform.position, holdParent.position) > 0.1f)
+        {
+            Vector3 moveDirection = (holdParent.position - heldObj.transform.position);
+            heldObj.GetComponent<Rigidbody>().AddForce(moveDirection * moveForce);
+        }
+    }
+
+    void DropObject()
+    {
+        Rigidbody heldRig = heldObj.GetComponent<Rigidbody>();
+        heldRig.useGravity = true;
+        heldRig.drag = 1;
+
+        heldObj.transform.parent = null;
+        heldObj = null;
     }
 
 
