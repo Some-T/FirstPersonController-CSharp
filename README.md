@@ -26,6 +26,7 @@
 - Pick up objects, move object with player whilst holding and such throw objects.
 	- Todo still for this:
 		- Stop the issue, where it is picking up the object on the corner of it.
+		- Do it so I press E key again and it drops the object, still allowing me to run and walk with the object when holding it.
 		- Throw the object
 		- Stop object changing size, when I crouch with the object, I have disabled picking up an object and to drop it when crouching but it still changes the scale / size of the object slightly.
 			- It is also doing this slightly when normally picking up an object but not as much.
