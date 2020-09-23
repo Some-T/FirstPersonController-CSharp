@@ -39,7 +39,6 @@
 	- Melee Attack from the player (e.g. hitting an object with a stick)
 	- Drop melee weapon
 - Tweak gravity for when player jumps.
-- Tweak clamping for when the player looks up and down so thats its further / more.
 - Tweak speed possibly?
 - Clean up code, add comments in and sort into sections where possible so I know what each part of the code is doing.
 
