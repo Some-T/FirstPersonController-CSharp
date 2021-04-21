@@ -23,6 +23,7 @@
 
 # To Do:
 
+- Update project to use new Unity 'Input System' package.
 - Pick up objects, move object with player whilst holding and such throw objects.
 	- Todo still for this:
 		- Stop the issue, where it is picking up the object on the corner of it.
