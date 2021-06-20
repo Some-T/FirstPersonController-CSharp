@@ -1,6 +1,6 @@
 # Instructions:
 
-- Tested in Unity 2021.1.11f1
+- Tested in Unity 2021.1.12f1
 - Requires ProBuilder to be installed from the Unity package manager.
 - Open Main Unity scene and utilise and modify the first person controller as you wish, utilising ProBuilder will make it easy to modify and prototype according to your game.
 
